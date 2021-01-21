@@ -6,4 +6,4 @@ ReEDS is developed and maintained by the National Renewable Energy Laboratory (N
 
 The data and code files posted in this repository are related to projects completed in the GEG group at ETH Zurich that build off and use NREL's open source ReEDS code.
 
-For more questions, please email Jonathan Ogland-Hand: johand@ethz.ch
+Please email Jonathan Ogland-Hand with further questions: johand@ethz.ch
