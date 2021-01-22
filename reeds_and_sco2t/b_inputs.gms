@@ -3054,14 +3054,13 @@ valgen(i,v,r,t)$[(cofire(i) or sameas(i,"biopower"))$(not biofeas(r))] = no ;
 valcap("co2_storage",v,r,t) = no ;
 valgen("co2_storage",v,r,t) = no ;
 
-set co2_storage_bins /cbin1*cbinXXX/;
-*Note to user: change the XXX with the number of bins in your co2 storage supply curve .csv file, referenced below:
+set co2_storage_bins /cbin1*cbin1273/;
 
-*created using SCO2T - note to user: change the file name from XXX to your file name
-table co2_storage_supply(r,*,co2_storage_bins) "CO2 storage capacity (GtCO2) and storage cost (2014$/tCO2)"
+*created using SCO2T
+table co2_storage_supply(r,*,co2_storage_bins) "CO2 storage capacity (GtCO2) and storage cost (2004$/tCO2)"
 $offlisting
 $ondelim
-$include inputs_case%ds%XXX.csv
+$include inputs_case%ds%co2_storage_supplycurve_baseline.csv
 $offdelim
 $onlisting
 ;
@@ -3069,7 +3068,7 @@ $onlisting
 *multiply the emissions by 9 because the emit_rate data already accounted
 *for the assumption that 90% of the CO2 is captured. Therefore, those emission
 *rates are only 10% (what is emitted to the atmosphere).
-*Assume 30 year geologic CO2 storage lifetime
+*Assume 30 year geologic CO2 storage site lifetime
 
 scalar ccs_emit_scaler "scaling factor for CCS tech emissions" /9/,
        ccs_years_operating "assumed lifetime of CCS power plant" /30/,
